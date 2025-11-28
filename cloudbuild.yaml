@@ -1,0 +1,13 @@
+substitutions:
+  _PROJECT_ID: "autonomous-innovation-engine"
+steps:
+  - name: gcr.io/cloud-builders/npm
+    dir: functions
+    args: ["ci"]
+  - name: gcr.io/cloud-builders/npm
+    dir: functions
+    args: ["run","build"]
+  - name: gcr.io/cloud-builders/gcloud
+    args: ["firebase","deploy","--only","hosting,functions","--project","$_PROJECT_ID"]
+options:
+  logging: CLOUD_LOGGING_ONLY

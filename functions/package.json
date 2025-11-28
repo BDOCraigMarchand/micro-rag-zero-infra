@@ -1,0 +1,6 @@
+{
+  "name": "micro-rag-functions",
+  "type": "module",
+  "engines": { "node": "^20" },
+  "scripts": { "build": "echo build ok" }
+}
